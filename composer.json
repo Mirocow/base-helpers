@@ -1,0 +1,26 @@
+{
+    "name": "mirocow/html",
+    "description": "Html helpers",
+    "keywords": ["helpers", "html"],
+    "homepage": "https://github.com/mirocow/html-helper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mirocow",
+            "homepage": "http://mirocow.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mirocow\\helpers\\": "mirocow/helpers/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
