@@ -5,6 +5,8 @@
  * @license http://www.yiiframework.com/license/
  */
 
+namespace mirocow\helpers;
+
 /**
  * interface necessary for work ArrayHelper
  * Original Yii2 class has name Arrayable
