@@ -20,7 +20,7 @@ namespace mirocow\helpers;
  * WARNING: Not all methods are tested to date
  * If you find an error, let us know
  */
-class Html
+class HtmlHelper
 {
 
     public static function url($url)
