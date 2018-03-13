@@ -5,6 +5,8 @@
  * @license http://www.yiiframework.com/license/
  */
 
+namespace mirocow\helpers;
+
 /**
  * Json is a helper class providing JSON data encoding and decoding.
  * It enhances the PHP built-in functions `json_encode()` and `json_decode()`
