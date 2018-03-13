@@ -22,7 +22,7 @@ namespace mirocow\helpers;
  * WARNING: Not all methods are tested to date
  * If you find an error, let us know
  */
-class BaseJson
+class JsonHelper
 {
     /**
      * List of JSON Error messages assigned to constant names for better handling of version differences
