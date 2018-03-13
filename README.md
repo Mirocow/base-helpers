@@ -2,8 +2,6 @@
 Html Helper provides a set of static methods for generating commonly used HTML tags.
 ###
 
-Version: 0.9.1
-
 ## Install
 1. You need to copy the files to the directory `/system/helper/`.
 
