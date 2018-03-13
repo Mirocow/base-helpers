@@ -5,6 +5,8 @@
  * @license http://www.yiiframework.com/license/
  */
 
+namespace mirocow\helpers;
+
 /**
  * Html provides a set of static methods for generating commonly used HTML tags.
  *
