@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "mirocow\\helpers\\": "mirocow/helpers/"
+            "mirocow\\helpers\\": ""
         }
     },
     "extra": {
