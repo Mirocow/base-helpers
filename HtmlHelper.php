@@ -219,7 +219,7 @@ class HtmlHelper
 
     /**
      * Generates a link tag that refers to an external CSS file.
-     * @param array|string $url the URL of the external CSS file. This parameter will be processed by [[self::url()]].
+     * @param array|string $url the URL of the external CSS file. This parameter will be processed by [[static::url()]].
      * @param array $options the tag options in terms of name-value pairs. The following options are specially handled:
      *
      * - condition: specifies the conditional comments for IE, e.g., `lt IE 9`. When this is specified,
@@ -231,14 +231,14 @@ class HtmlHelper
      * be HTML-encoded using [[encode()]]. If a value is null, the corresponding attribute will not be rendered.
      * See [[renderTagAttributes()]] for details on how attributes are being rendered.
      * @return string the generated link tag
-     * @see self::url()
+     * @see static::url()
      */
     public static function cssFile($url, $options = [])
     {
         if (!isset($options['rel'])) {
             $options['rel'] = 'stylesheet';
         }
-        $options['href'] = self::url($url);
+        $options['href'] = static::url($url);
 
         if (isset($options['condition'])) {
             $condition = $options['condition'];
@@ -254,7 +254,7 @@ class HtmlHelper
 
     /**
      * Generates a script tag that refers to an external JavaScript file.
-     * @param string $url the URL of the external JavaScript file. This parameter will be processed by [[self::url()]].
+     * @param string $url the URL of the external JavaScript file. This parameter will be processed by [[static::url()]].
      * @param array $options the tag options in terms of name-value pairs. The following option is specially handled:
      *
      * - condition: specifies the conditional comments for IE, e.g., `lt IE 9`. When this is specified,
@@ -265,11 +265,11 @@ class HtmlHelper
      * be HTML-encoded using [[encode()]]. If a value is null, the corresponding attribute will not be rendered.
      * See [[renderTagAttributes()]] for details on how attributes are being rendered.
      * @return string the generated script tag
-     * @see self::url()
+     * @see static::url()
      */
     public static function jsFile($url, $options = [])
     {
-        $options['src'] = self::url($url);
+        $options['src'] = static::url($url);
         if (isset($options['condition'])) {
             $condition = $options['condition'];
             unset($options['condition']);
@@ -314,7 +314,7 @@ class HtmlHelper
      */
     public static function beginForm($action = '', $method = 'post', $options = [])
     {
-        $action = self::url($action);
+        $action = static::url($action);
 
         $hiddenInputs = [];
         if (!strcasecmp($method, 'get') && ($pos = strpos($action, '?')) !== false) {
@@ -358,15 +358,15 @@ class HtmlHelper
      * @param string $text link body. It will NOT be HTML-encoded. Therefore you can pass in HTML code
      * such as an image tag. If this is coming from end users, you should consider [[encode()]]
      * it to prevent XSS attacks.
-     * @param array|string|null $url the URL for the hyperlink tag. This parameter will be processed by [[self::url()]]
+     * @param array|string|null $url the URL for the hyperlink tag. This parameter will be processed by [[static::url()]]
      * and will be used for the "href" attribute of the tag. If this parameter is null, the "href" attribute
      * will not be generated.
      *
-     * If you want to use an absolute url you can call [[self::url()]] yourself, before passing the URL to this method,
+     * If you want to use an absolute url you can call [[static::url()]] yourself, before passing the URL to this method,
      * like this:
      *
      * ```php
-     * Html::a('link text', self::url($url, true))
+     * Html::a('link text', static::url($url, true))
      * ```
      *
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
@@ -374,12 +374,12 @@ class HtmlHelper
      * If a value is null, the corresponding attribute will not be rendered.
      * See [[renderTagAttributes()]] for details on how attributes are being rendered.
      * @return string the generated hyperlink
-     * @see \yii\helpers\self::url()
+     * @see \yii\helpers\static::url()
      */
     public static function a($text, $url = null, $options = [])
     {
         if ($url !== null) {
-            $options['href'] = self::url($url);
+            $options['href'] = static::url($url);
         }
         return static::tag('a', $text, $options);
     }
@@ -405,24 +405,24 @@ class HtmlHelper
 
     /**
      * Generates an image tag.
-     * @param array|string $src the image URL. This parameter will be processed by [[self::url()]].
+     * @param array|string $src the image URL. This parameter will be processed by [[static::url()]].
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. The values will be HTML-encoded using [[encode()]].
      * If a value is null, the corresponding attribute will not be rendered.
      * See [[renderTagAttributes()]] for details on how attributes are being rendered.
      *
      * Since version 2.0.12 It is possible to pass the `srcset` option as an array which keys are
-     * descriptors and values are URLs. All URLs will be processed by [[self::url()]].
+     * descriptors and values are URLs. All URLs will be processed by [[static::url()]].
      * @return string the generated image tag.
      */
     public static function img($src, $options = [])
     {
-        $options['src'] = self::url($src);
+        $options['src'] = static::url($src);
 
         if (isset($options['srcset']) && is_array($options['srcset'])) {
             $srcset = [];
             foreach ($options['srcset'] as $descriptor => $url) {
-                $srcset[] = self::url($url) . ' ' . $descriptor;
+                $srcset[] = static::url($url) . ' ' . $descriptor;
             }
             $options['srcset'] = implode(',', $srcset);
         }
