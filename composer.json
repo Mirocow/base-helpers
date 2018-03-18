@@ -1,8 +1,8 @@
 {
-    "name": "mirocow/html-helper",
+    "name": "mirocow/base-helpers",
     "description": "Html helpers",
     "keywords": ["helpers", "html"],
-    "homepage": "https://github.com/mirocow/html-helper",
+    "homepage": "https://github.com/mirocow/base-helpers",
     "license": "MIT",
     "authors": [
         {
